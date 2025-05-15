@@ -1,67 +1,82 @@
 ### Cloning the Repository
 
---> Clone the repository using the command below:
+1. Clone the repository using the command below:
+
 ```bash
 git clone https://github.com/bharat-dir96/Tour-Packages-API.git
 ```
 
---> Move into the directory where we have the project files:
+2. Move into the project directory:
+
 ```bash
 cd Tour-Packages-API
 ```
 
---> Create a virtual environment:
+3. Create a virtual environment:
+
 ```bash
 python -m venv envname
 ```
 
---> Activate the virtual environemnt:
+4. Activate the virtual environment:
+
 ```bash
-envname\scripts\activate
+envname\Scripts\activate  # On Windows
+source envname/bin/activate  # On macOS/Linux
 ```
 
---> Install the requirements:
+5. Install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-#
+---
+
 ### Running the App
 
-# To run the backend  
+#### 🚀 To Run the Backend
 
---> First, move to the backend folder:
+1. Move to the backend folder:
+
 ```bash
 cd backend
 ```
 
---> Then, run following command to run django server:
+2. Run the Django development server:
+
 ```bash
 python manage.py runserver
 ```
 
-> ⚠ Then, the development server will be started at http://127.0.0.1:8000/
+> ⚠ The backend server will start at: `http://127.0.0.1:8000/`
 
-API ENDPOINTS:
-"{root_url}/api"
-"{root_url}/api/packages"
-"{root_url}/api/packages/:code"
+**Available API Endpoints:**
 
+* `GET /api`
+* `GET /api/packages`
+* `GET /api/packages/:code`
 
-# To run the Frontend 
---> Move to the irctc-clone folder:
+---
+
+#### 💻 To Run the Frontend
+
+1. Move to the frontend folder:
+
 ```bash
 cd irctc-clone
 ```
 
---> Make sure to install npm with:
+2. Install the frontend dependencies:
+
 ```bash
 npm install
 ```
 
---> Then, run following command to start vite server:
+3. Start the Vite development server:
+
 ```bash
 npm run dev
 ```
 
-> ⚠ Then, the development server will be started at http://localhost:5173/
+> ⚠ The frontend server will start at: `http://localhost:5173/`
