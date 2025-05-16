@@ -89,6 +89,7 @@ function Card({checkedValue}){
                         <p><b>Origin:</b> <span>{pkg.origin}</span></p>
                         <p><b>Destination:</b> <span>{pkg.destination}</span></p>
                         <p><b>Departure:</b> <span>{pkg.departure}</span></p>
+                        <p><b>Upcoming Date: <span>{pkg.upcoming_date}</span></b></p>
                     </div>
 
                     <div className="card-amentities">
