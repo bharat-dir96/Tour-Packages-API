@@ -3,7 +3,7 @@
 1. Clone the repository using the command below:
 
 ```bash
-git clone https://github.com/bharat-dir96/Tour-Packages-API.git
+git clone https://github.com/bharat-dir96/Tour-Packages-Frontend.git
 ```
 
 2. Move into the project directory:
@@ -12,54 +12,7 @@ git clone https://github.com/bharat-dir96/Tour-Packages-API.git
 cd Tour-Packages-API
 ```
 
-3. Create a virtual environment:
-
-```bash
-python -m venv envname
-```
-
-4. Activate the virtual environment:
-
-```bash
-envname\Scripts\activate  # On Windows
-source envname/bin/activate  # On macOS/Linux
-```
-
-5. Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
 ### Running the App
-
-#### 🚀 To Run the Backend
-
-1. Move to the backend folder:
-
-```bash
-cd backend
-```
-
-2. Run the Django development server:
-
-```bash
-python manage.py runserver
-```
-
-> ⚠ The backend server will start at: `http://127.0.0.1:8000/`
-
-**Available API Endpoints:**
-
-* `GET /api`
-* `GET /api/packages`
-* `GET /api/packages/:code`
-
----
-
-#### 💻 To Run the Frontend
 
 1. Move to the frontend folder:
 
