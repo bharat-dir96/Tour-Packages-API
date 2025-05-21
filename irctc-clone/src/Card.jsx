@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './css/Card.css'
 
-function Card({checkedValue}){
+function Card({checkedValue, searchLocation}){
 
     const [packages, setPackages] = useState([]);
     const [sortField, setSortField] = useState(null);
@@ -11,7 +11,7 @@ function Card({checkedValue}){
         const fetchData = async () => {
             try{
                 console.log("Fetching Starts");
-                const response = await fetch('http://127.0.0.1:8000/api/packages');
+                const response = await fetch('http://localhost:3000/api/packages');
                 const data = await response.json();
                 setPackages(data);
                 console.log(data);
@@ -35,9 +35,15 @@ function Card({checkedValue}){
         }
     }
 
-    const filteredPackages = checkedValue
-        ? packages.filter(pkg => pkg.origin === checkedValue)
-        : packages;
+    // const filteredPackages = checkedValue
+    //     ? packages.filter(pkg => pkg.origin === checkedValue)
+    //     : packages;
+
+     const filteredPackages = packages.filter(pkg => {
+        const matchesOrigin = checkedValue ? pkg.origin === checkedValue : true;
+        const matchesSearchLocation = searchLocation ? pkg.origin.toLowerCase().includes(searchLocation.toLowerCase()) : true;
+        return matchesOrigin && matchesSearchLocation;
+    });
 
     console.log(filteredPackages);
 
@@ -75,7 +81,7 @@ function Card({checkedValue}){
             <div className="package-card" key={pkg.code}>
                 {/* Left sarchpack */}
                 <div className="card-image">
-                    <img src={`/assets/${pkg.image}`} alt={pkg.destination} />
+                    <img src={`/assets/packageImages/${pkg.image}`} alt={pkg.destination} />
                 </div>
                 {/* mid searchpack */}
                 <div className="card-detials">
@@ -94,9 +100,9 @@ function Card({checkedValue}){
 
                     <div className="card-amentities">
                         <p><b>Inclusion:</b></p>
-                        <img src="/assets/car icon.png" alt="Car" className="icon-image"/>Car
-                        <img src="/assets/hotel.png" alt="Hotel" className="icon-image"/>Hotel
-                        <img src="/assets/meal.png" alt="Meal" className="icon-image"/>Meal
+                        <img src="/assets/icon/car icon.png" alt="Car" className="icon-image"/>Car
+                        <img src="/assets/icon/hotel.png" alt="Hotel" className="icon-image"/>Hotel
+                        <img src="/assets/icon/meal.png" alt="Meal" className="icon-image"/>Meal
                     </div>
 
                 </div>

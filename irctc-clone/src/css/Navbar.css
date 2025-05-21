@@ -2,54 +2,55 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #fafafa;
+    padding: 1rem 3rem;
+    background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
 }
   
 .navbar-left{
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 }
 
 .logo {
-  width: 60px;
-  height: auto;
+  width: 325px;
+  margin: 15px 25px;
 }
 
-.brand-name {
-  font-size: 1rem;
-  color: #0015b7;
-  font-weight: bold;
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    color: black;
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
 }
 
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+.nav-links li{
+    position: relative;
 }
 
-.earn-rewards {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  cursor: pointer;
+.nav-links li::after {
+  content: "|";
+  position: absolute;
+  right: -20px;
+  color: #ccc;
 }
 
-.nav-link {
-    font-size: 1rem;
-    color: #333;
-    text-decoration: none;
-    margin-left: 30px;
+.nav-links li:last-child::after {
+  content: "";
 }
 
-.irctc-logo {
-    width: 60px;
-    height: auto;
-    vertical-align: middle;
-    margin-left: 30px;
+.call-btn {
+    background-color: #0b5f82;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-family:sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
 }
