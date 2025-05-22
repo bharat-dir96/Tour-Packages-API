@@ -40,8 +40,8 @@ function Card({checkedValue, searchLocation}){
     //     : packages;
 
      const filteredPackages = packages.filter(pkg => {
-        const matchesOrigin = checkedValue ? pkg.origin === checkedValue : true;
-        const matchesSearchLocation = searchLocation ? pkg.origin.toLowerCase().includes(searchLocation.toLowerCase()) : true;
+        const matchesOrigin = checkedValue ? pkg.location === checkedValue : true;
+        const matchesSearchLocation = searchLocation ? pkg.location.toLowerCase().includes(searchLocation.toLowerCase()) : true;
         return matchesOrigin && matchesSearchLocation;
     });
 
