@@ -11,7 +11,7 @@ function Card({checkedValue, searchLocation}){
         const fetchData = async () => {
             try{
                 console.log("Fetching Starts");
-                const response = await fetch('http://localhost:3000/api/packages');
+                const response = await fetch('http://localhost:3000/api/activities');
                 const data = await response.json();
                 setPackages(data);
                 console.log(data);
@@ -91,11 +91,20 @@ function Card({checkedValue, searchLocation}){
 
                     <div className="card-info">
                         <p><b>Duration:</b> <span>{pkg.duration}</span></p>
-                        <p><b>Package Code:</b> <span>{pkg.code}</span></p>
-                        <p><b>Origin:</b> <span>{pkg.origin}</span></p>
-                        <p><b>Destination:</b> <span>{pkg.destination}</span></p>
+                        <p><b>Activity Code:</b> <span>{pkg.code}</span></p>
+                        <p><b>Location:</b> <span>{pkg.location}</span></p>
                         <p><b>Departure:</b> <span>{pkg.departure}</span></p>
-                        <p><b>Upcoming Date: <span>{pkg.upcoming_date}</span></b></p>
+                        <p><b>Upcoming Date: <span>
+                            {new Date(pkg.upcoming_date).toLocaleDateString('en-GB', {
+                                day: '2-digit',
+                                month: 'short',
+                                year: 'numeric'
+                            })}
+                            </span></b></p>
+                    </div>
+
+                    <div>
+                        <p>{pkg.description}</p>
                     </div>
 
                     <div className="card-amentities">
@@ -109,7 +118,7 @@ function Card({checkedValue, searchLocation}){
                 {/* right searchpack */}
                 <div className="card-action">
                     <label>Starting From</label>
-                    <strong> {pkg.price}</strong>
+                    <strong> ${pkg.price}</strong>
                     <a href="#">View Detials</a>
                     <button><p>Book Now</p></button>
                 </div>
