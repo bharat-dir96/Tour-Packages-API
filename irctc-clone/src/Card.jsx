@@ -120,7 +120,7 @@ function Card({checkedValue, searchLocation}){
                     <label>Starting From</label>
                     <strong> ${pkg.price}</strong>
                     <a href="#">View Detials</a>
-                    <button><p>Book Now</p></button>
+                    <button>Book Now</button>
                 </div>
             </div>
             ))
