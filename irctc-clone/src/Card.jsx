@@ -11,7 +11,7 @@ function Card({checkedValue, searchLocation}){
         const fetchData = async () => {
             try{
                 console.log("Fetching Starts");
-                const response = await fetch('http://localhost:3000/api/activities');
+                const response = await fetch('https://activities-api-w8vb.onrender.com/api/activities');
                 const data = await response.json();
                 setPackages(data);
                 console.log(data);
