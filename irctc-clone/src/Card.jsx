@@ -93,7 +93,6 @@ function Card({checkedValue, searchLocation}){
                         <p><b>Duration:</b> <span>{pkg.duration}</span></p>
                         <p><b>Activity Code:</b> <span>{pkg.code}</span></p>
                         <p><b>Location:</b> <span>{pkg.location}</span></p>
-                        <p><b>Departure:</b> <span>{pkg.departure}</span></p>
                         <p><b>Upcoming Date: <span>
                             {new Date(pkg.upcoming_date).toLocaleDateString('en-GB', {
                                 day: '2-digit',
@@ -103,9 +102,10 @@ function Card({checkedValue, searchLocation}){
                             </span></b></p>
                     </div>
 
-                    <div>
-                        <p>{pkg.description}</p>
+                   <div>
+                        <p>{pkg.description.length > 100 ? pkg.description.slice(0, 100) + '...' : pkg.description}</p>
                     </div>
+
 
                     <div className="card-amentities">
                         <p><b>Inclusion:</b></p>
@@ -118,7 +118,7 @@ function Card({checkedValue, searchLocation}){
                 {/* right searchpack */}
                 <div className="card-action">
                     <label>Starting From</label>
-                    <strong> ${pkg.price}</strong>
+                    <strong> Rs. {pkg.price}</strong>
                     <a href="#">View Detials</a>
                     <button>Book Now</button>
                 </div>
